@@ -1,43 +1,21 @@
-import * as React from 'react'
-import Link from 'gatsby-link'
+import * as React from 'react';
+import './index.css';
+import Layout from '../components/Layout/Layout';
+import Logo from '../components/Logo/Logo';
 
-// Please note that you can use https://github.com/dotansimha/graphql-code-generator
-// to generate all types from graphQL schema
-interface IndexPageProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-      }
-    }
-  }
+interface Props {
+  noIdea: string;
 }
 
-export default class extends React.Component<IndexPageProps, {}> {
-  constructor(props: IndexPageProps, context: any) {
-    super(props, context)
-  }
-  public render() {
-    return (
-      <div>
-        <h1>Hi people</h1>
-        <p>
-          Welcome to your new{' '}
-          <strong>{this.props.data.site.siteMetadata.title}</strong> site.
-        </p>
-        <p>Now go build something great.</p>
-        <Link to="/page-2/">Go to page 2</Link>
+const IndexPage: React.SFC<Props> = () => (
+  <Layout>
+    <div className="page-index">
+      <Logo animated theme="gigantic" />
+      <div className="page-index__announcement">
+        coming soon
       </div>
-    )
-  }
-}
+    </div>
+  </Layout>
+);
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+export default IndexPage;

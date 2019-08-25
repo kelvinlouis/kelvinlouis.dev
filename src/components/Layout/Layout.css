@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,700,800&display=swap");
+@import "../../../node_modules/normalize.css/normalize.css";
+
+:root {
+  --color-black: #000000;
+  --color-forest--matte: #495147;
+  --color-sky--matte: #cddee0;
+  --color-beige: #f7F5e6;
+  --color--orange: #f78e69;
+  --color-orange-matte: #f1bb87;
+}
+
+body {
+  background-color: var(--color-forest--matte);
+  font-family: "Alegreya Sans", sans-serif;
+  color: var(--color-beige);
+}

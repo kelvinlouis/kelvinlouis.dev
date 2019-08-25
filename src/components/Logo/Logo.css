@@ -1,0 +1,67 @@
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: font-size 1s ease-in-out;
+  font-weight: 800;
+}
+
+.logo--gigantic {
+  font-size: 6em;
+}
+
+.logo__prefix {
+  margin-right: -0.1em;
+  margin-top: -0.1em;
+  width: 0.38em;
+}
+
+.logo__prefix::before {
+  content: "K";
+  display: inline-block;
+  transform: rotate(-180deg);
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 40% 100%);
+}
+
+.logo__surname {
+  position: relative;
+  display: inline-block;
+}
+
+.logo--animated .logo__surname {
+  width: 2.2em;
+  border-right: 2px solid transparent;
+  text-align: left;
+  overflow: hidden;
+  animation: typewriter 1s steps(5) 2s 1 normal both,
+  blinkingCursor 500ms steps(5) 8 normal;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width:480px) {
+  .logo--gigantic {
+    font-size: 12em;
+  }
+}
+
+
+@keyframes typewriter {
+  from {
+    margin-left: 1rem;
+    width: 0;
+  }
+  to {
+    margin-left: 0;
+    width: 2.2em;
+  }
+}
+
+@keyframes blinkingCursor {
+  from {
+    border-right-color: rgba(255,255,255, .75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
